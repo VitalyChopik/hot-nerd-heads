@@ -1,0 +1,137 @@
+.hero {
+  position: relative;
+  padding: rem(108) 0;
+
+  @include media-mx(992) {
+    padding: 0;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__container {}
+
+  &__title-box {
+    @include media-mx(992) {
+      position: relative;
+      margin: 0 rem(-20);
+      padding: rem(104) rem(20);
+    }
+  }
+
+  &__title {
+    color: #FFF;
+    font-size: rem(57);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+
+    @include media-mx(992) {
+      text-align: center;
+      font-size: rem(34);
+    }
+  }
+
+  &__block {
+    margin-top: rem(93);
+    display: flex;
+    justify-content: space-between;
+    gap: rem(20);
+
+    @include media-mx(767) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: rem(50);
+    }
+  }
+
+  &__box {
+    max-width: rem(350);
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+
+    @include media-mx(992) {
+      gap: rem(20);
+      padding-bottom: rem(50);
+      border-bottom: 1px solid #E2E2E2;
+    }
+  }
+
+  &__box-title {
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+  }
+
+  &__box-img {
+    box-shadow: 0px 0px 9px 0px rgba(150, 160, 255, 0.25);
+    max-width: rem(60);
+    border-radius: 15px;
+  }
+
+  &__box-value {
+    color: #FFF;
+    font-size: rem(20);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+
+    @include media-mx(992) {
+      color: #181818;
+    }
+  }
+
+  &__box-text {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+
+    p {
+      color: #FFF;
+      font-size: rem(16);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+
+      @include media-mx(992) {
+        color: #181818;
+      }
+    }
+  }
+
+  &__box-btn {
+    border-radius: 10px;
+    background: #4A3AFE;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.25), 0px -1px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    color: #FFF;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(200);
+    height: rem(54);
+    transition: all 0.5s;
+
+    &:hover {
+      opacity: 0.7;
+      box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0), 0px -1px 4px 0px rgba(0, 0, 0, 0) inset;
+    }
+  }
+}

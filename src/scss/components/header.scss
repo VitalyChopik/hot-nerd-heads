@@ -1,78 +1,57 @@
 .header {
   width: 100%;
-  transition: background-color var(--bs-transition);
+  background: #FFF;
   z-index: 50;
-
-  .header-is-sticky & {
-    // ..стили для липкого хедера
-    position: fixed;
-    background-color: #007aff;
-  }
+  padding: rem(20) 0;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 
   // .header__container
   &__container {
-    height: rem($headerHeight);
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
-    .header-is-sticky & {
-      height: rem($headerHeight - 50);
+    @include media-mx(500) {
+      justify-content: center;
     }
   }
-}
 
-// Burger
-/*
-.icon-menu {
-  display: none;
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+  }
 
-  @include media-mx(768) {
-    display: block;
-    position: relative;
-    width: rem(30);
-    height: rem(18);
-    cursor: pointer;
-    z-index: 5;
-
-    span,
-    &::before,
-    &::after {
-      content: "";
-      transition: all 300ms ease 0ms;
-      right: 0;
-      position: absolute;
-      width: 100%;
-      height: rem(2);
-      background-color: #000;
+  &__menu {
+    @include media-mx(500) {
+      display: none;
     }
 
-    &::before {
-      top: 0;
-    }
-
-    &::after {
-      bottom: 0;
-    }
-
-    span {
-      top: calc(50% - rem(1));
-    }
-
-    .menu-open & {
-      span {
-        width: 0;
+    .menu {
+      &__list {
+        display: flex;
+        align-items: center;
+        gap: rem(60);
       }
 
-      &::before {
-        top: calc(50% - rem(1));
-        transform: rotate(-45deg);
-      }
+      &__item {}
 
-      &::after {
-        bottom: calc(50% - rem(1));
-        transform: rotate(45deg);
+      &__link {
+        color: #181818;
+        font-family: SF Pro Display;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        text-transform: uppercase;
+        transition: all 0.5s;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
 }
-*/

@@ -28,7 +28,7 @@
 /**
 * Подключение custom scrollbar для всего сайта
 */
-@import 'config/scrollbar';
+// @import 'config/scrollbar';
 
 /**
 * Общие параметры, шаблоны(заготовки) и вспомогательные классы
@@ -49,3 +49,5 @@
 @import 'components/tabs';
 @import 'components/accordion';
 @import 'components/footer';
+@import 'components/hero';
+@import 'components/email';

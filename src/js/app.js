@@ -33,3 +33,25 @@ function sendData() {
 			console.error('Error sending data:', error);
 		});
 }
+
+// Найти все якорные ссылки с классом .menu__link
+const menuLinks = document.querySelectorAll('.menu__link');
+
+// Добавить обработчики событий для каждой ссылки
+menuLinks.forEach(link => {
+	link.addEventListener('click', (e) => {
+		e.preventDefault();
+
+		// Получить значение атрибута href ссылки
+		const targetId = link.getAttribute('href').substring(1);
+
+		// Найти целевой блок
+		const targetBlock = document.getElementById(targetId);
+
+		// Плавно прокрутить страницу к целевому блоку
+		window.scrollTo({
+			top: targetBlock.offsetTop - 40, // Учитывайте высоту header
+			behavior: 'smooth'
+		});
+	});
+});

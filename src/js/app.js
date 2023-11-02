@@ -19,12 +19,13 @@ form.addEventListener('submit', (e) => {
 function sendData() {
 	document.querySelector('.contact__form-btn').textContent = 'Sending...';
 	const formData = new FormData(form);
-	fetch('https://formsubmit.co/chopikvitali@yandex.by', {
+	fetch('https://formsubmit.co/hello@hotheads.pro', {
 		method: 'POST',
 		body: formData,
 	})
 		.then(response => response.text())
 		.then(data => {
+			console.log(data);
 			form.classList.toggle('hide');
 			document.querySelector('.contact__titles').classList.toggle('hide');
 			document.querySelector('.contact__form-success').classList.toggle('active');
